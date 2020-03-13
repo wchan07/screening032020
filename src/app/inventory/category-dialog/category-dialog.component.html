@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="item-row" *ngFor="let item of items">
+    <span class="label">{{ item.title }}</span>
+    <button
+      class="action-btn"
+      mat-icon-button
+      (click)="remove(item)"
+      [disabled]="!itemCounts[item.title]"
+    >
+      <mat-icon>remove</mat-icon>
+    </button>
+    <span class="item-count">
+      {{ itemCounts[item.title] }}
+    </span>
+    <button mat-icon-button class="action-btn">
+      <mat-icon (click)="add(item)">add</mat-icon>
+    </button>
+  </div>
+  <mat-dialog-actions class="dialog-actions">
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button mat-button class="done-btn" (click)="done()">Done</button>
+  </mat-dialog-actions>
+</div>

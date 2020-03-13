@@ -1,0 +1,15 @@
+
+.icon-checked {
+  visibility: hidden;
+}
+
+.isChecked {
+  visibility: visible;
+}
+
+.menu-button {
+  border: 0;
+  .button-text {
+    color: #ff0000;
+  }
+}

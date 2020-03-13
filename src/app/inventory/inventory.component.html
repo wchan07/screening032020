@@ -1,0 +1,16 @@
+<div>
+  <mat-toolbar>
+    <div class="category-listing">
+      <button
+        class="toolbar-item"
+        mat-button
+        *ngFor="let category of getVisibleCategories()"
+        (click)="openCategoryDialog(category)"
+      >
+        {{ getItemCount(category) ? getItemCount(category) : '' }}
+        {{ category.title }} <mat-icon inline="true">arrow_drop_down</mat-icon>
+      </button>
+    </div>
+    <app-category-menu [categories]="categories"></app-category-menu>
+  </mat-toolbar>
+</div>

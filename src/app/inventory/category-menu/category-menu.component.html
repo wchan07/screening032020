@@ -1,0 +1,20 @@
+<mat-menu #appMenu="matMenu">
+  <button
+    mat-menu-item
+    *ngFor="let category of categories"
+    (click)="toggle(category)"
+  >
+    <mat-icon
+      class="icon-checked"
+      [ngClass]="{ isChecked: category.isVisible }"
+    >
+      check</mat-icon
+    >
+    {{ category.title }}
+  </button>
+</mat-menu>
+
+<button mat-icon-button [matMenuTriggerFor]="appMenu" class="menu-button">
+  <span class="button-text">categories</span>
+  <mat-icon inline="true">arrow_drop_down</mat-icon>
+</button>
