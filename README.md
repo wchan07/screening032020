@@ -6,7 +6,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 1. clone this repo
 2. cd to the project directory
 3. run 'npm install'
-4. run 'ng serve'
+4. run 'ng serve --open'
 
 ## Development server
 
