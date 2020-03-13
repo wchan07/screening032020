@@ -20,7 +20,6 @@ export class InventoryComponent implements OnInit {
   ngOnInit(): void {
     this.inventoryService.getCategories().subscribe(categoryList => {
       this.categories = categoryList;
-      console.log(this.categories);
     });
   }
 
@@ -32,10 +31,21 @@ export class InventoryComponent implements OnInit {
     return this.categories.filter(({ isVisible }) => isVisible);
   }
 
-  openCategoryDialog(category: Category) {
+  openCategoryDialog(category: Category, $event: any) {
+    let position: any = {};
+    if (
+      $event.target &&
+      $event.target.getBoundingClientRect &&
+      $event.target.getBoundingClientRect()
+    ) {
+      const clientRect = $event.target.getBoundingClientRect();
+      position.left = clientRect.x + "px";
+      position.top = clientRect.y + clientRect.height + "px";
+    }
     this.dialog.open(CategoryDialogComponent, {
-      data: {category},
-      backdropClass: 'category-dialog-backdrop'
+      data: { category },
+      backdropClass: "category-dialog-backdrop",
+      position
     });
   }
 

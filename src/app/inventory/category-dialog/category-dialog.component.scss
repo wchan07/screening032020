@@ -28,7 +28,8 @@
   border-radius: 5px;
   color: #2962ff;
 
-  &:focus {
+  &:focus,
+  &:active {
     border: 0;
   }
 
@@ -45,7 +46,7 @@
     background: none;
     border: 0;
     margin: 0 10px 0 0;
-    
+
     &.done-btn {
       color: #2962ff;
     }

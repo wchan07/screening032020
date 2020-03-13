@@ -5,7 +5,7 @@
         class="toolbar-item"
         mat-button
         *ngFor="let category of getVisibleCategories()"
-        (click)="openCategoryDialog(category)"
+        (click)="openCategoryDialog(category, $event)"
       >
         {{ getItemCount(category) ? getItemCount(category) : '' }}
         {{ category.title }} <mat-icon inline="true">arrow_drop_down</mat-icon>
